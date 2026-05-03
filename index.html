@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MODE SELECTION SCREEN -->
+  <div id="mode-screen" class="screen">
+    <h1 class="title">CHESS</h1>
+    <p class="subtitle">SELECT MODE</p>
+    <div class="menu-buttons">
+      <button class="menu-btn" id="btn-2player">2 PLAYERS</button>
+      <button class="menu-btn" id="btn-vs-bot">VS BOT</button>
+    </div>
+    <div id="difficulty-select" class="hidden">
+      <p class="subtitle">SELECT DIFFICULTY</p>
+      <div class="menu-buttons">
+        <button class="menu-btn diff-btn" data-diff="beginner">BEGINNER</button>
+        <button class="menu-btn diff-btn" data-diff="intermediate">INTERMEDIATE</button>
+        <button class="menu-btn diff-btn" data-diff="advanced">ADVANCED</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="game-screen" class="screen hidden">
+    <div class="game-layout">
+
+      <!-- SIDEBAR LEFT -->
+      <div class="sidebar" id="sidebar-left">
+        <div class="sidebar-block">
+          <div class="sidebar-label">MODE</div>
+          <div class="sidebar-value" id="display-mode">—</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">MOVE</div>
+          <div class="sidebar-value" id="display-move">1</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">CAPTURED</div>
+          <div id="captured-white" class="captured-pieces"></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">CAPTURED</div>
+          <div id="captured-black" class="captured-pieces"></div>
+        </div>
+      </div>
+
+      <!-- BOARD AREA -->
+      <div class="board-area">
+        <div class="turn-indicator" id="turn-indicator">WHITE'S TURN</div>
+        <div class="board-wrapper">
+          <div class="rank-labels" id="rank-labels"></div>
+          <div id="board" class="board"></div>
+        </div>
+        <div class="file-labels" id="file-labels"></div>
+      </div>
+
+      <!-- SIDEBAR RIGHT -->
+      <div class="sidebar" id="sidebar-right">
+        <div class="sidebar-block">
+          <div class="sidebar-label">STATUS</div>
+          <div class="sidebar-value" id="display-status">PLAYING</div>
+        </div>
+        <div class="sidebar-block">
+          <button class="action-btn" id="btn-resign">RESIGN</button>
+        </div>
+        <div class="sidebar-block">
+          <button class="action-btn" id="btn-new-game">NEW GAME</button>
+        </div>
+        <div class="sidebar-block">
+          <button class="action-btn" id="btn-change-mode">CHANGE MODE</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROMOTION MODAL -->
+  <div id="promotion-modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-title">PROMOTE PAWN</div>
+      <div class="promo-pieces" id="promo-pieces"></div>
+    </div>
+  </div>
+
+  <!-- GAME OVER OVERLAY -->
+  <div id="gameover-overlay" class="overlay hidden">
+    <div class="overlay-box">
+      <div class="overlay-result" id="overlay-result">CHECKMATE!</div>
+      <div class="overlay-winner" id="overlay-winner">WHITE WINS</div>
+      <div class="overlay-buttons">
+        <button class="menu-btn" id="btn-play-again">PLAY AGAIN</button>
+        <button class="menu-btn" id="btn-menu">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="chess.js"></script>
+</body>
+</html>
