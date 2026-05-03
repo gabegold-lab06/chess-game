@@ -40,6 +40,12 @@ Everything runs in three files with no dependencies beyond a Google Fonts CDN im
 
 **`style.css`** — design tokens in `:root` CSS variables. All colors, neon glows, and the CRT scanline effect (`body::after`) live here. Square size is responsive via `clamp(44px, 7vw, 72px)`.
 
+## Keeping this file up to date
+
+After completing any meaningful change — a new feature, a significant UI redesign, a new file, or a change to how the bot or move engine works — ask the user: **"Should I update CLAUDE.md to reflect these changes?"** If they say yes, edit the relevant section(s) and commit the updated file alongside the feature commit (or as its own follow-up commit).
+
+Minor changes (bug fixes, color tweaks, copy edits) do not need a CLAUDE.md update.
+
 ## Key conventions
 
 - Piece strings are two characters: color prefix (`w`/`b`) + type (`P R N B Q K`). `color(piece)` and `type(piece)` are the accessors used everywhere.
